@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Convite de Aniversário - Circuito BelleFolia 3.0</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Estilo para o botão de tocar música */
+    #btnTocarMusica {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+    #btnTocarMusica:hover {
+      background-color: #e040fb;
+    }
+    #btnTocarMusica:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px #ff80ab;
+    }
+  </style>
+</head>
+<body>
+  <button id="btnTocarMusica">🎵 Tocar Música</button>
+
+  <div class="container">
+    <header>
+      <h1>Circuito BelleFolia 3.0</h1>
+      <img src="logo.jpg" alt="Logo do Aniversário" class="logo" />
+      <p class="date-location"><strong>Data:</strong> 2 de agosto | <strong>Horário:</strong> 19h | <strong>Local:</strong> Salão de festas — Av. Professor Magalhães Neto, 1741</p>
+    </header>
+
+    <section class="welcome-message">
+      <p>Ah, que bom você chegou!</p>
+      <p>❤ Querido amigo ou familiar, seja bem vindo! ❤</p>
+      <p>Este site é uma área criada pelo <strong>little man</strong>, meu futuro desenvolvedor de software preferido (a irmã seguirá sempre sendo coruja mesmo), com muito amor para compartilhar com todos vocês os detalhes do meu aniversário que está chegandoooo (e vai rolar a festa, vai rolar!)🥳🎉🎂</p>
+      <p>Como uma boa baiana, sou também carnaval, e nunca irei deixar de ir atrás do trio elétrico, curtindo a nossa oitava maravilha, o Carnaval de Salvador. 🤩 Então, como já sabe, esse é o tema da nossa comemoração! Lhe convido para celebrar a minha terceira década de vida curtindo a minha baianidade nagô ôuôôÔ</p>
+      <p>Fique bem tranquilo quanto ao look! Você irá receber um abadá especialmente feito para este momento e pode completar com qualquer tipo de peça de baixo. Para o calçado, sugiro um sapato/sandália bem confortável, pois vamos mostrar a mistura do Brasil com o Egito, mesmo quem é como eu e não sabe dançar bonito (qualquer coisa é só pular que nem pipoca ou se você quiser, pode dançar largadinho). 😆</p>
+      <p>Para os baianos (sou eu, é você, somos nós), a retirada antecipada do abadá será feita no mesmo local da festa. Avisarei assim que ficar pronto!😀</p>
+      <p>Quem vem de fora, vem chegando agora sem se preocupar que seu abadá também chegará até você a tempo de uma possível customização. Ah, e pra quem não conhece Salvador: vem, que você vai conhecer a cidade de luz e prazer correndo atrás do trio! ❤</p>
+      <p>Já que atrás do trio elétrico só não vai quem já morreu, então confirma aí a sua presença, que a gente se completa, se enchendo de alegria. Sua presença alegrará meu coração e juntos cantaremos cada canção.😊</p>
+      <p>No mais, já pega a latinha, bate uma na outra, não sossegue e se entregue a essa viagem louca! 💋</p>
+    </section>
+
+    <section class="form-section">
+      <h2>Confirme sua presença e escolha o tamanho do abadá</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScMsN0IH2HzBK2ZinD3wM44vKyQgO2es9I9pMvpuo_ucp_TpA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+    </section>
+
+    <section class="tabela-medidas">
+      <h2>Tabela de Medidas</h2>
+      <table>
+        <thead>
+          <tr><th>Tamanho</th><th>Largura (cm)</th><th>Comprimento (cm)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PP</td><td>49</td><td>65</td></tr>
+          <tr><td>P</td><td>51</td><td>68</td></tr>
+          <tr><td>M</td><td>53</td><td>70</td></tr>
+          <tr><td>G</td><td>56</td><td>72</td></tr>
+          <tr><td>GG</td><td>60</td><td>74</td></tr>
+          <tr><td>XG</td><td>62</td><td>76</td></tr>
+          <tr><td>EXG</td><td>64</td><td>78</td></tr>
+          <tr><td>EXGG</td><td>66</td><td>80</td></tr>
+        </tbody>
+      </table>
+      <p class="small-note">*Tamanhos aproximados</p>
+    </section>
+  </div>
+
+  <audio id="musicaCarnaval" preload="auto">
+    <source src="audio/We Are The World Of Carnaval (Ao Vivo).mp3" type="audio/mpeg" />
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+  <script>
+    const btn = document.getElementById('btnTocarMusica');
+    const audio = document.getElementById('musicaCarnaval');
+
+    // Tentar tocar automaticamente na carga da página
+    window.addEventListener('load', () => {
+      audio.play().catch(() => {
+        // Autoplay bloqueado, botão ficará visível para o usuário
+        btn.style.display = 'block';
+      });
+    });
+
+    // Quando o botão for clicado, tocar música e esconder botão
+    btn.addEventListener('click', () => {
+      audio.play();
+      btn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
