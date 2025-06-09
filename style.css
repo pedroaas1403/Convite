@@ -195,3 +195,17 @@ form.formulario select {
   width: 100%;
   max-width: 200px;
 }
+.tabela-medidas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 600px) {
+  .tabela-medidas th,
+  .tabela-medidas td {
+    padding: 8px;
+    font-size: 14px;
+    max-width: 350px;
+  }
+}
